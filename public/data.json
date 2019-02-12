@@ -1,0 +1,172 @@
+{
+    "offers" : [
+        {
+            "productId" : 1039,
+            "bankId" : 39,
+            "name" : "Citibank Personal Loan",
+            "Rating" : {
+                "value" : "4.0",
+                "denomination" : "5", 
+                "userCount" : "2883"
+            }, 
+            "InterestRate": {
+                "minRate" : "10.99",
+                "maxRate" : "17.99",
+                "type": "Fixed",
+                "oldValue": "14.5",
+                "value": "13.25"
+            }, 
+            "ProcessingFee": {
+                "value": "11493",
+                "type": "OneTime", 
+                "rangeText": "Up to 2% or minimum ${RUPEE}2,000 (whichever is Max)"
+            },
+            "Emi": {
+                "value": "12884"
+            },
+            "LoanAmount": {
+                "min": "",
+                "max": "30L", 
+                "value": ""
+            }, 
+            "Tenure": {
+                "min": "1",
+                "max": "5",
+                "value": ""
+            }, 
+            "Savings": { 
+                "value": "23520"
+            },
+            "Pros": ["This offer is available only if all necessary documents are uploaded online"],
+            "Cons": ["Conditional pre-closure & part-payment options available only after 12 months"],
+            "Documents": ["For Salaried: KYC - PAN, address & ID proof", 
+                          "Income proof, bank statement and one photograph"],
+            "Perks": [
+                {
+                    "type": "Door step service",
+                    "isApplicable": true
+                },
+                {
+                    "type": "E-approval",
+                    "isApplicable": true
+                },
+                {
+                    "type": "Part-payment available",
+                    "isApplicable": true
+                },
+                {
+                    "type": "Top-up loan available",
+                    "isApplicable": true
+                },
+                {
+                    "type": "No guarantor required",
+                    "isApplicable": true
+                },
+                {
+                    "type": "Balance transfer",
+                    "isApplicable": true
+                }
+            ], 
+            "FeesAndCharges": {
+                "pre-closure":{
+                    "isAvailable":true, 
+                    "condition": "Up to ${RUPEE} 5,000 post 12 months depending on the loan amount.",
+                    "tooltip": "4.5% rate applicable if preclosure done via balance transfer"
+                }, 
+                "part-payment":{
+                    "isAvailable":true,
+                    "value": 0,  
+                    "tooltip": "Part payment is allowed once a year upto 5 times of EMI"
+                }
+            }, 
+            "ValueAdds": {
+                "Branches" : "35"
+            }
+
+        },
+        {
+            "productId" : 1526,
+            "bankId" : 526,
+            "name" : "Tata Capital Personal Loan",
+            "Rating" : {
+                "value" : "4.0",
+                "denomination" : "5", 
+                "userCount" : "2883"
+            }, 
+            "InterestRate": {
+                "minRate" : "10.99",
+                "maxRate" : "17.99",
+                "type": "Fixed",
+                "oldValue": "14.5",
+                "value": "13.25"
+            }, 
+            "ProcessingFee": {
+                "value": "11493",
+                "type": "BankbazaarExclusive",
+                "rangeText": "Up to 2% or minimum ${RUPEE}2,000 (whichever is Max)"
+            },
+            "Emi": {
+                "value": "12884"
+            },
+            "LoanAmount": {
+                "min": "",
+                "max": "30L", 
+                "value": ""
+            }, 
+            "Tenure": {
+                "min": "1",
+                "max": "5",
+                "value": ""
+            }, 
+            "Savings": { 
+                "value": "23520"
+            },
+            "Pros": ["This offer is available only if all necessary documents are uploaded online"],
+            "Cons": ["Conditional pre-closure & part-payment options available only after 12 months"],
+            "Documents": ["For Salaried: KYC - PAN, address & ID proof", 
+                          "Income proof, bank statement and one photograph"],
+            "Perks": [
+                {
+                    "type": "Door step service",
+                    "isApplicable": true
+                },
+                {
+                    "type": "E-approval",
+                    "isApplicable": true
+                },
+                {
+                    "type": "Part-payment available",
+                    "isApplicable": true
+                },
+                {
+                    "type": "Top-up loan available",
+                    "isApplicable": true
+                },
+                {
+                    "type": "No guarantor required",
+                    "isApplicable": true
+                },
+                {
+                    "type": "Balance transfer",
+                    "isApplicable": true
+                }
+            ], 
+            "FeesAndCharges": {
+                "pre-closure":{
+                    "isAvailable":true, 
+                    "condition": "Up to ${RUPEE} 5,000 post 12 months depending on the loan amount.",
+                    "tooltip": "4.5% rate applicable if preclosure done via balance transfer"
+                }, 
+                "part-payment":{
+                    "isAvailable":true,
+                    "condition":["Part-payments can be made only after completion of 12 months. For part payments between 13 to 24 months, a fee of 4% is applicable on the part-payment amount. 3% is applicable on payments between 25 to 36 months. 2% is applicable post 36 months", 
+                                 "Part-payments are allowed only twice during the loan tenure and once a year, and the amount cannot exceed 25% of the principal outstanding"]
+                }
+            }, 
+            "ValueAdds": {
+                "Branches" : "35"
+            }
+
+        }
+    ]
+}
