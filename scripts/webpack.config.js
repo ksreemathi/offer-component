@@ -19,6 +19,10 @@ module.exports = {
         loader: "babel-loader",
         options: { presets: ["@babel/env"] }
       },
+      { 
+        test: /\.(jpg|png|woff|woff2|eot|ttf|svg)$/, 
+        loader: "url-loader?limit=8192" 
+      },
       {
         test: /\.css$/,
         use: ["style-loader", "css-loader"]

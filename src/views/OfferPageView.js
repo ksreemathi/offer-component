@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import "../styles/App.css";
 import OffersViewManager from "../core/OffersViewManager";
 import OfferRowView from "./OfferRowView";
+import {Table} from "semantic-ui-react";
+import "semantic-ui-css/semantic.min.css";
 
 export default class OfferPageView extends React.Component {
     static propTypes = {
@@ -21,7 +23,22 @@ export default class OfferPageView extends React.Component {
     renderOfferTable(offersList) {
       // TODO: Yet to handle groupedOffers Layout
       const children = offersList.map((offerModel) => <OfferRowView offer={offerModel}/>)
-      return <div>{children}</div>;
+      return (
+        <Table celled padded>
+            <Table.Header>
+                <Table.Row>
+                  <Table.HeaderCell singleLine>Bank Name</Table.HeaderCell>
+                  {/* <Table.HeaderCell>Effect</Table.HeaderCell>
+                  <Table.HeaderCell>Efficacy</Table.HeaderCell>
+                  <Table.HeaderCell>Consensus</Table.HeaderCell>
+                  <Table.HeaderCell>Comments</Table.HeaderCell> */}
+                </Table.Row>  
+            </Table.Header>
+            <Table.Body>
+                {children}
+            </Table.Body>  
+        </Table>
+      );
     }
    
   }
