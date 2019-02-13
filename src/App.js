@@ -1,14 +1,18 @@
-import React, { Component} from "react";
-import "./styles/App.css";
+import React from "react";
+import ReactDOM from "react-dom";
+import Context from "./core/Context";
+import OffersViewManager from "./core/OffersViewManager";
+import OfferPageView from "./views/OfferPageView";
 
-class App extends Component{
-  render(){
-    return(
-      <div className="App">
-        <h1> Hello, World!! </h1>
-      </div>
-    );
-  }
+export function createContext(data) {
+  return new Context(data);
 }
 
-export default App;
+export function createOffersViewManager(params) {
+  const {context, offersConfig} = params
+  return new OffersViewManager(context, offersConfig);
+}
+
+export function launchView(offerViewManager){
+    ReactDOM.render(<OfferPageView offerViewManager={offerViewManager}/>, document.getElementById("root"));
+}

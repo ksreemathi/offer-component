@@ -9,7 +9,32 @@
 
 <body>
   <div id="root"></div>
-  <script src="../dist/offer-component.js"></script>
+  <!-- <script src="../dist/offer-component.js"></script> -->
+
+  <script type="text/javascript">
+      window.addEventListener("load", function(){
+        fetch("/data.json").then(function(response){
+          return response.json();
+        }).then(function(slideshowConfig){
+              var context = offercomponent.createContext({
+                    userContext: {isInternal: false},
+                    experimentContext: {},
+                    deviceType: "DESKTOP",
+                    analytics : {disabled: false},
+                    productType: "PL",
+                    sector: "IN",
+                    accessMode: "external",
+                    variantOptions: ["mobileRequired","emailOptional"],
+              });
+              var offerViewManager= offercomponent.createOffersViewManager({context: context, offersConfig:slideshowConfig});
+              offercomponent.launchView(offerViewManager);
+
+        });
+      
+        
+      });
+  </script>
+
 </body>
 
 </html>
