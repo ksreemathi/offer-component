@@ -1,5 +1,6 @@
 const path = require("path");
 const webpack = require("webpack");
+const HTMLWebpackPlugin = require("html-webpack-plugin");
 
 const projectDir = path.resolve(__dirname, "../");
 const publicDir = path.resolve(projectDir, "public/");
@@ -8,7 +9,7 @@ const distDir = path.resolve(projectDir, "dist/");
 
 
 module.exports = {
-  entry: appDir + "/index.js",
+  entry: appDir + "/App.js",
   mode: "development",
   module: {
     rules: [
@@ -27,14 +28,23 @@ module.exports = {
   resolve: { extensions: ["*", ".js", ".jsx"] },
   output: {
     path: distDir,
-    publicPath: distDir,
-    filename: "offer-component.js"
+    filename: "offer-component.js",
+    libraryTarget: "var",
+    library: "offercomponent"
   },
+  devtool: "inline-source-map",
   devServer: {
     contentBase: publicDir,
     port: 3000,
-    publicPath: "http://localhost:3000/dist/",
+    publicPath: "/",
     hotOnly: true
   },
-  plugins: [new webpack.HotModuleReplacementPlugin()]
+  plugins: [
+     new HTMLWebpackPlugin({
+      template: path.resolve("public/index.html"),
+      minify: false,
+      inject: "head"
+    }),
+    new webpack.HotModuleReplacementPlugin(),
+  ]
 };
