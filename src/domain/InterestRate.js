@@ -23,4 +23,24 @@ export default class InterestRate {
         this.value = value;
         this.valueWithoutDiscount = oldValue;
     }
+
+    getValue() {
+        return this.value;
+    }
+
+    getValueWithoutDiscount() {
+        return this.valueWithoutDiscount;
+    }
+
+    getType(){
+        return this.type;
+    }
+
+    getMinRate(){
+        return this.minRate;
+    }
+
+    getMaxRate(){
+        return this.maxRate;
+    }
 }

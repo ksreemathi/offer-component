@@ -2,12 +2,14 @@
     "offers" : [
         {
             "productId" : 1039,
-            "bankId" : 39,
-            "name" : "Citibank Personal Loan",
-            "Rating" : {
+            "Bank" : {
+                "id" : 39,
+                "name" : "Citibank Personal Loan"
+            },
+            "Ratings" : {
                 "value" : "4.0",
-                "denomination" : "5", 
-                "userCount" : "2883"
+                "maxRatings" : "5", 
+                "usersCount" : "2883"
             }, 
             "InterestRate": {
                 "minRate" : "10.99",
@@ -86,12 +88,14 @@
         },
         {
             "productId" : 1526,
-            "bankId" : 526,
-            "name" : "Tata Capital Personal Loan",
-            "Rating" : {
+            "Bank" :{
+                "id" : 526,
+                "name" : "Tata Capital Personal Loan"
+            },
+            "Ratings" : {
                 "value" : "4.0",
-                "denomination" : "5", 
-                "userCount" : "2883"
+                "maxRatings" : "5", 
+                "usersCount" : "2883"
             }, 
             "InterestRate": {
                 "minRate" : "10.99",

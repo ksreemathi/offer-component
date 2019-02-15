@@ -13,4 +13,12 @@ export default class OffersViewManager {
             this.offersWrapperModel = new OffersWrapper(this.context, config);
         }
     }
+
+    getOffersWrapperModel(){
+        return this.offersWrapperModel;
+    }
+
+    getContext() {
+        return this.context;
+    }
 }

@@ -6,7 +6,7 @@ type ProcessingFeeCtorArgsTypes = {
     value: number;
     valueRangeText: string;
 }
-export default class ProcessingFee{
+export default class ProcessingFee {
     type: ProcessingFeeType;
     value: number;
     valueRangeText: string;
@@ -15,5 +15,13 @@ export default class ProcessingFee{
         this.value = value;
         this.type = type;
         this.valueRangeText = valueRangeText;
+    }
+
+    getValue() {
+        return this.value;
+    }
+
+    getValueRangeText() {
+        return this.valueRangeText;
     }
 }

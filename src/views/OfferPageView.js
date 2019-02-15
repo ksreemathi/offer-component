@@ -5,6 +5,8 @@ import OffersViewManager from "../core/OffersViewManager";
 import OfferRowView from "./OfferRowView";
 import {Table} from "semantic-ui-react";
 import "semantic-ui-css/semantic.min.css";
+import { displayColumnsForProduct } from "../helpers/DomainTypeMappings";
+import {get} from "lodash-es";
 
 export default class OfferPageView extends React.Component {
     static propTypes = {
@@ -22,16 +24,15 @@ export default class OfferPageView extends React.Component {
 
     renderOfferTable(offersList) {
       // TODO: Yet to handle groupedOffers Layout
-      const children = offersList.map((offerModel) => <OfferRowView offer={offerModel}/>)
+      const displayRenderers =  get(displayColumnsForProduct, this.props.offerViewManager.context.getProductType().key);
+      const headers = this.renderHeader(displayRenderers);
+      const children = offersList.map((offerModel) => <OfferRowView offer={offerModel} displayRenderers={displayRenderers}/>)
+     
       return (
         <Table celled padded>
             <Table.Header>
                 <Table.Row>
-                  <Table.HeaderCell singleLine>Bank Name</Table.HeaderCell>
-                  {/* <Table.HeaderCell>Effect</Table.HeaderCell>
-                  <Table.HeaderCell>Efficacy</Table.HeaderCell>
-                  <Table.HeaderCell>Consensus</Table.HeaderCell>
-                  <Table.HeaderCell>Comments</Table.HeaderCell> */}
+                  {headers}
                 </Table.Row>  
             </Table.Header>
             <Table.Body>
@@ -39,6 +40,11 @@ export default class OfferPageView extends React.Component {
             </Table.Body>  
         </Table>
       );
+    }
+
+    renderHeader(displayRenderers) {
+       const headers = displayRenderers.map((renderer) => renderer.getHeaderName());
+       return headers.map((header) =>  <Table.HeaderCell> {header} </Table.HeaderCell>);
     }
    
   }

@@ -41,7 +41,14 @@ module.exports = {
     contentBase: publicDir,
     port: 3000,
     publicPath: "/",
-    hotOnly: true
+    hotOnly: true,
+    proxy: {
+      "/images": {
+          target: "https://www.bankbazaar.com",
+          secure: false,
+          changeOrigin: true
+        }
+    }
   },
   plugins: [
      new HTMLWebpackPlugin({
