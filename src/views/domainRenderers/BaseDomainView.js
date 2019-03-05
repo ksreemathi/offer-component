@@ -10,20 +10,25 @@ export default class BaseDomainView extends React.Component {
 
     constructor(args){
         super(args);
-        this.domains = this.props.domains;
+        this.state= {
+            domains : this.props.domains
+        }
     }
 
 
-    // getProductType() {
-    //     return this.context.getProductType().key;
-    // }
+    componentWillReceiveProps(newProps) {
+        if (newProps.domains && this.props.domains !== newProps.domains) {
+            this.setState({domains: newProps.domains});
+        }
+    }
+
 
     getDomain(key) {
         if(!key) {
             key = this.constructor.name;
         }
         
-        return get(this.domains, key);
+        return get(this.state.domains, key);
     }
 
 }

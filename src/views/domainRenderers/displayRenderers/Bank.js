@@ -15,7 +15,7 @@ export default class Bank extends BaseDomainView{
         const bank = this.getDomain(BankDomain.name);
         const ratings = this.getDomain(RatingsDomain.name);
         return (
-            <Segment.Group basic horizontal size="tiny">
+            <Segment.Group compact horizontal basic>
                 <Segment.Group compact vertical size="mini">
                     <Segment basic><img src={"/images/india/bank-offer/small/"+ this.getBankNameFromId(bank.getId())+".png"} alt="BankImg"/></Segment>
                     <Segment basic> <Checkbox/> </Segment> 
