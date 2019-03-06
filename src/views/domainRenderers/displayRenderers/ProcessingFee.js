@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
-import BaseDomainView from "../BaseDomainView";
+import BaseDomainDisplayView from "./BaseDomainDisplayView";
 import { Label } from "semantic-ui-react";
 
-export default class ProcessingFee extends BaseDomainView {
+export default class ProcessingFee extends BaseDomainDisplayView {
 
     static getHeaderName(){
         return "Processing Fee";

@@ -2,14 +2,14 @@ import React from "react";
 import PropTypes from "prop-types";
 import OfferModel from "../core/model/OfferModel";
 import {Table} from "semantic-ui-react";
-import BaseDomainView from "./domainRenderers/BaseDomainView";
+import BaseDomainDisplayView from "./domainRenderers/displayRenderers/BaseDomainDisplayView";
 import { getDomainsForRenderer } from "../helpers/DomainTypeMappings";
 import {get} from "lodash-es";
 
 export default class OfferRowView extends React.Component {
     static propTypes = {
         offer: PropTypes.instanceOf(OfferModel),
-        displayRenderers: PropTypes.arrayOf(PropTypes.instanceOf(BaseDomainView))
+        displayRenderers: PropTypes.arrayOf(PropTypes.instanceOf(BaseDomainDisplayView))
     }
     
     render() {

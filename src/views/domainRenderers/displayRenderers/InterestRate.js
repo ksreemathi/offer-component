@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
-import BaseDomainView from "../BaseDomainView";
+import BaseDomainDisplayView from "./BaseDomainDisplayView";
 import { Label } from "semantic-ui-react";
 
-export default class InterestRate extends BaseDomainView {
+export default class InterestRate extends BaseDomainDisplayView {
 
     static getHeaderName(){
         return "Interest Rate";

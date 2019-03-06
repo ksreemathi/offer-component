@@ -3,6 +3,11 @@ import PropTypes from "prop-types";
 import {Dropdown, Checkbox, Label, Popup, Icon} from "semantic-ui-react";
 
 export default class DropdownCheckBox extends React.Component{
+    static propTypes = {
+        options:   PropTypes.object.isRequired,
+        onSelection: PropTypes.func.isRequired
+    }
+
     constructor(args){
         super(args);
         this.state = {
@@ -10,12 +15,8 @@ export default class DropdownCheckBox extends React.Component{
         }
     }
 
-    getOptions(){
-        return [];
-    }
-
     render() {
-        const options = this.getOptions();
+        const options = this.props.options;
 
         const checkBoxOptions = options.map((option) => (
                         <CheckboxOption text={option.text} 
@@ -48,7 +49,7 @@ export default class DropdownCheckBox extends React.Component{
         }
 
         this.setState({selectedValues: selectedSet}, () => {
-            this.handleItemClickCallBack && this.handleItemClickCallBack(selectedSet)
+            this.props.onSelection && this.props.onSelection(selectedSet);
         });
     }
 }
@@ -85,7 +86,4 @@ export class CheckboxOption extends React.Component {
             return {active: newState};
         });
     }
-
-
-
 }

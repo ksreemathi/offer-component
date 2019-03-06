@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
-import BaseDomain from "../../domain/BaseDomain";
+import BaseDomain from "../../../domain/BaseDomain";
 import {get} from "lodash-es";
 
-export default class BaseDomainView extends React.Component {
+export default class BaseDomainDisplayView extends React.Component {
     static propTypes = {
         domains: PropTypes.object.isRequired,
     }

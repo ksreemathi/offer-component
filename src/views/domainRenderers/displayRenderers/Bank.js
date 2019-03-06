@@ -1,12 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
-import BaseDomainView from "../BaseDomainView";
+import BaseDomainDisplayView from "./BaseDomainDisplayView";
 import { Label, Segment, Checkbox, Rating } from "semantic-ui-react";
 import OfferModel from "../../../core/model/OfferModel";
 import {get} from "lodash-es";
 import {Bank as BankDomain, Ratings as RatingsDomain } from "../../../domain";
 
-export default class Bank extends BaseDomainView{
+export default class Bank extends BaseDomainDisplayView{
     static getHeaderName(){
         return "Bank Name";
     }
